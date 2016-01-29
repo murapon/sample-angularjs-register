@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8" />
+<title>AngularJS</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+<script src="js/service.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/validator.js"></script>
+</head>
+<body ng-controller="MyController">
+
+<div id="show" ng-show="show_input">
+
+<span ng-repeat="error_message in error_messages" style="color:red">{{error_message}}<br></span>
+
+<form name="myForm" novalidate>
+  <label for="name">名前：</label>
+  <input id="name" name="name" type="text" ng-model="name" /><br/><br/>
+  <label for="tel">電話番号：</label>
+  <input id="tel" name="tel" type="text" ng-model="tel" /><br/><br/>
+  <button ng-click="conf()">確認</button>
+</form>
+</div>
+
+<div id="show" ng-show="show_conf">
+名前：{{name_conf}}<br>
+電話番号：{{tel_conf}}<br>
+  <button ng-click="comp()">登録</button>
+</div>
+
+<div id="show" ng-show="show_comp">
+{{result}}<br>
+</div>
+
+</body>
+</html>
